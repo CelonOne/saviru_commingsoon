@@ -1,8 +1,15 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-// Hook to calculate the countdown based on a target date
-const useCountdown = (targetDate) => {
+// Define the return type of the hook
+interface Countdown {
+  days: number
+  hours: number
+  minutes: number
+  seconds: number
+}
+
+const useCountdown = (targetDate: string): Countdown => {
   // Convert the target date to a timestamp
   const targetTime = new Date(targetDate).getTime()
 
